@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>FETCH DATA</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        <style>
+        table, th, td {
+        border: 1px solid black;
+        }
+        th, td {
+        padding: 5px;
+        text-align: center; 
+        color: black;
+        
+        }
+</style>
+    </head>
+    <body>
+        <body>
+
+            <table style="border: 5px solid black">
+            
+            <tbody>
+                <tr>
+                    <td> <input type="text" name="Name" value="Raj"/>  </td>
+                    <td> <input type="text" name="Role" value="Project Manager "/> </td>
+                   </tr>
+                   <tr>
+                       <td> <input type="text"  name="Name" value="Arun"/>  </td>
+                       <td> <input type="text" name="Role" value="Project Leader "/> </td>
+                      </tr>
+                   <tr>
+                       <td> <input type="text" name="Name" value="Akash"/>  </td>
+                       <td> <input type="text" name="Role" value="Team Leader "/> </td>
+                   </tr>
+                   <tr>
+                       <td> <input type="text"   name="Name" value="Athiban"/>  </td>
+                       <td> <input type="text" name="Role" value="Module Leader "/> </td>
+                   </tr>
+                   <tr>
+                       <td> <input type="text"  name="Name" value="Gowtham"/>  </td>
+                       <td> <input type="text" name="Role" value="Senior Engineer "/> </td>
+                   </tr>
+                   <tr>
+                       <td> <input type="text"  name="Name" value="Babu"/>  </td>
+                       <td> <input type="text" name="Role" value="Project Trainee "/> </td>
+                   </tr>
+                   <tr>
+                       <td> <input type="text"  name="Name"  value="Hariharn"/>  </td>
+                       <td> <input type="text" name="Role" value="Quality Analyst"/> </td>
+                   </tr>
+                   <tr>
+                       <td> <input type="text"  name="Name" value="Jeyakumar"/>  </td>
+                       <td> <input type="text" name="Role" value="Architect "/> </td>
+                   </tr>
+                   
+            </tbody>
+           
+           
+            </table>
+            <script>
+        
+        var table = document.getElementsByTagName("table")[0];
+        var tbody = table.getElementsByTagName("tbody")[0];
+         tbody.onclick = function (e) {
+        e = e || window.event;
+        var data = [];
+        var target = e.srcElement || e.target;
+        while (target && target.nodeName !== "TR") {
+            target = target.parentNode;
+        }
+        if (target) {
+            var cells = target.getElementsByTagName("td");
+            for (var i = 0; i < cells.length; i++) {
+                data.push(cells[i].innerHTML);
+            }
+        }
+    alert(data);
+};
+         </script>
+    
+    </body>
+</html>
